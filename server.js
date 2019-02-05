@@ -37,9 +37,14 @@ app.get('/profile/:id', (req, res) => {
     profile.handleProfile(req, res, db)
 });
 
-// ==> GET IMAGE ENTRIES
+// ==> UPDATE IMAGE ENTRIES
 app.put('/image', (req, res) => {
     entries.handleEntries(req, res, db)
+});
+
+// ==> POST ON CLARIFAI API
+app.post('/image-url', (req, res) => {
+    entries.handleApiCall(req, res)
 });
 
 // ==> PORT CONF
